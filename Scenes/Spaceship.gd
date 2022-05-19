@@ -5,9 +5,6 @@ export (int) var speed = 50000
 var velocity = Vector2.ZERO
 var p1_pos = "pilot"
 var p2_pos = ""
-var roles = ["pilot", "left_gunner", "right_gunner", "shields"]
-var p1_keys = ["p1_pilot", "p1_left_gunner", "p1_right_gunner", "p1_shields"]
-var p2_keys = ["p2_pilot", "p2_left_gunner", "p2_right_gunner", "p2_shields"]
 
 func change_roles():
 	if Input.is_action_pressed("p1_pilot") and p2_pos != "pilot":
@@ -31,16 +28,14 @@ func change_roles():
 func get_input():
 	velocity.x = 0
 	velocity.y = 0
-	if Input.is_action_pressed("p1_right") and p1_pos == "pilot":
+	if Input.is_action_pressed("p1_right") and p1_pos == "pilot" or Input.is_action_pressed("p2_right") and p2_pos == "pilot":
 		velocity.x += 1
-	if Input.is_action_pressed("p1_left"):
+	if Input.is_action_pressed("p1_left") and p1_pos == "pilot" or Input.is_action_pressed("p2_left") and p2_pos == "pilot":
 		velocity.x -= 1
-	if Input.is_action_pressed("p1_fwd"):
+	if Input.is_action_pressed("p1_fwd") and p1_pos == "pilot" or Input.is_action_pressed("p2_fwd") and p2_pos == "pilot":
 		velocity.y -= 1
-	if Input.is_action_pressed("p1_back"):
+	if Input.is_action_pressed("p1_back") and p1_pos == "pilot" or Input.is_action_pressed("p2_back") and p2_pos == "pilot":
 		velocity.y += 1
-	
-	
 	
 	if Input.is_action_pressed("exit"):
 		get_tree().quit()

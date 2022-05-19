@@ -1,7 +1,14 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://box.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Spaceship.gd" type="Script" id=2]
 
 [node name="Spaceship" type="KinematicBody2D"]
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 479, 285 )
+texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 373, 281, 373, 377, 583, 382, 581, 197, 381, 194 )

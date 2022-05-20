@@ -13,3 +13,10 @@ texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 354, 276, 386.667, 470, 565, 466, 603, 285, 544, 135, 413, 128 )
+
+[node name="Pilot_gun" type="Position2D" parent="."]
+position = Vector2( 480, 136.667 )
+
+[node name="Pilot_shoot_speed" type="Timer" parent="."]
+
+[connection signal="timeout" from="Pilot_shoot_speed" to="." method="_on_Pilot_shoot_speed_timeout"]

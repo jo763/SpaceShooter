@@ -4,7 +4,7 @@ export (int) var speed = 50000
 
 var velocity = Vector2.ZERO
 var p1_pos = "pilot"
-var p2_pos = ""
+var p2_pos = "right_gunner"
 
 func change_roles():
 	if Input.is_action_pressed("p1_pilot") and p2_pos != "pilot":

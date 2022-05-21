@@ -8,7 +8,6 @@ export (int) var speed = 30000
 var velocity = Vector2.ZERO
 var p1_pos = "pilot"
 var p2_pos = "right_gunner"
-var health = 100
 var shields = 50
 
 func change_roles():
@@ -63,3 +62,8 @@ func shoot():
 
 func _on_Pilot_shoot_speed_timeout():
 	pilot_shoot_Speed.stop()
+	
+func take_damage(damage):
+	Globals.health -= damage
+	if Globals.health <= 0:
+		queue_free()

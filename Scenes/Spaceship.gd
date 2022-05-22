@@ -77,7 +77,11 @@ func _on_Pilot_shoot_speed_timeout():
 	pilot_shoot_Speed.stop()
 	
 func take_damage(damage):
-	Globals.health -= damage
+	if damage <= Globals.shields:
+		Globals.shields -= damage
+	else:
+		damage -= Globals.shields
+		Globals.health -= damage
 	if Globals.health <= 0:
 		queue_free()
 

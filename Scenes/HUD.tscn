@@ -14,35 +14,93 @@ script = ExtResource( 2 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -101.0
+margin_top = -296.0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Score_Box"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Score_Box"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 580.0
-margin_bottom = 81.0
+margin_bottom = 276.0
+
+[node name="Player_1" type="HBoxContainer" parent="Score_Box/VBoxContainer"]
+margin_right = 560.0
+margin_bottom = 61.0
 alignment = 2
 
-[node name="Health_Label" type="Label" parent="Score_Box/HBoxContainer"]
+[node name="Player_1_Label" type="Label" parent="Score_Box/VBoxContainer/Player_1"]
+margin_left = 214.0
+margin_right = 465.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 1 )
+text = "Player 1: "
+
+[node name="Player_1_Level" type="Label" parent="Score_Box/VBoxContainer/Player_1"]
+margin_left = 469.0
+margin_right = 560.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 1 )
+text = "xyz"
+
+[node name="Player_2" type="HBoxContainer" parent="Score_Box/VBoxContainer"]
+margin_top = 65.0
+margin_right = 560.0
+margin_bottom = 126.0
+alignment = 2
+
+[node name="Player_2_Label" type="Label" parent="Score_Box/VBoxContainer/Player_2"]
+margin_left = 214.0
+margin_right = 465.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 1 )
+text = "Player 2: "
+
+[node name="Player_2_Level" type="Label" parent="Score_Box/VBoxContainer/Player_2"]
+margin_left = 469.0
+margin_right = 560.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 1 )
+text = "xyz"
+
+[node name="Health" type="HBoxContainer" parent="Score_Box/VBoxContainer"]
+margin_top = 130.0
+margin_right = 560.0
+margin_bottom = 191.0
+alignment = 2
+
+[node name="Health_Label" type="Label" parent="Score_Box/VBoxContainer/Health"]
 margin_left = 279.0
 margin_right = 451.0
 margin_bottom = 61.0
 custom_fonts/font = SubResource( 1 )
 text = "Health"
 
-[node name="Health_Level" type="Label" parent="Score_Box/HBoxContainer"]
+[node name="Health_Level" type="Label" parent="Score_Box/VBoxContainer/Health"]
 margin_left = 455.0
 margin_right = 560.0
 margin_bottom = 61.0
 custom_fonts/font = SubResource( 1 )
 text = "100"
 
-[node name="Message" type="Label" parent="Score_Box"]
-margin_left = 20.0
-margin_top = 43.0
-margin_right = 580.0
-margin_bottom = 57.0
+[node name="Shields" type="HBoxContainer" parent="Score_Box/VBoxContainer"]
+margin_top = 195.0
+margin_right = 560.0
+margin_bottom = 256.0
+alignment = 2
+
+[node name="Shields_Label" type="Label" parent="Score_Box/VBoxContainer/Shields"]
+margin_left = 257.0
+margin_right = 451.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 1 )
+text = "Shields"
+
+[node name="Shields_Level" type="Label" parent="Score_Box/VBoxContainer/Shields"]
+margin_left = 455.0
+margin_right = 560.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 1 )
+text = "100"

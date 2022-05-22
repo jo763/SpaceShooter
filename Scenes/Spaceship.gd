@@ -81,6 +81,7 @@ func take_damage(damage):
 		Globals.shields -= damage
 	else:
 		damage -= Globals.shields
+		Globals.shields = 0
 		Globals.health -= damage
 	if Globals.health <= 0:
 		queue_free()

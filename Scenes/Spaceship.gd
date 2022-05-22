@@ -9,6 +9,7 @@ var velocity = Vector2.ZERO
 var p1_pos = "pilot"
 var p2_pos = "right_gunner"
 var shields = 50
+var max_health = 100
 
 func change_roles():
 	if Input.is_action_pressed("p1_pilot") and p2_pos != "pilot":
@@ -32,6 +33,7 @@ func change_roles():
 func get_input():
 	velocity.x = 0
 	velocity.y = 0
+	# PILOT
 	if Input.is_action_pressed("p1_right") and p1_pos == "pilot" or Input.is_action_pressed("p2_right") and p2_pos == "pilot":
 		velocity.x += 1
 	if Input.is_action_pressed("p1_left") and p1_pos == "pilot" or Input.is_action_pressed("p2_left") and p2_pos == "pilot":
@@ -42,10 +44,14 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed("p1_primary") and p1_pos == "pilot" or Input.is_action_pressed("p2_primary") and p2_pos == "pilot":
 		shoot()
-
-	
 	if Input.is_action_pressed("exit"):
 		get_tree().quit()
+
+func get_shields_input():
+	pass
+
+	
+	
 
 func _physics_process(delta):
 	change_roles()
@@ -67,3 +73,8 @@ func take_damage(damage):
 	Globals.health -= damage
 	if Globals.health <= 0:
 		queue_free()
+
+func give_health(heal_amount):
+	Globals.health += heal_amount
+	if Globals.health > max_health:
+		Globals.health = max_health
